@@ -76,8 +76,8 @@ xpath["get_active_users"] = {
 }
 
 xpath["get_buttons_from_dialog"] = {
-    "follow_button": "//button[text()='Follow']",
-    "unfollow_button": "//button[text() = 'Following']",
+    "follow_button": "//button/div[text()='Follow']",
+    "unfollow_button": "//button/div[text() = 'Following']",
 }
 
 xpath["get_comment_input"] = {
@@ -95,12 +95,12 @@ xpath["get_comments_on_post"] = {
 xpath["get_cord_location"] = {"json_text": "//body"}
 
 xpath["get_following_status"] = {
-    "follow_button_XP": "//button/div[text()='Following' or \
+    "follow_button_XP": "//button/div[text()='Follow' or \
                                   text()='Requested' or \
                                   text()='Follow' or \
                                   text()='Follow Back' or \
                                   text()='Unblock' and not(ancestor::*/@role = 'presentation')]",
-    "follow_span_XP_following": "//button/div/span[contains(@aria-label, 'Following')]",
+    "follow_span_XP_following": "//button/div/div/span[@aria-label='Following']",
 }
 
 xpath["get_follow_requests"] = {
@@ -116,7 +116,7 @@ xpath["get_given_user_following"] = {
     "following_link": "//a[contains(@href,'following')]/@href",
 }
 
-xpath["get_photo_urls_from_profile"] = {"photos_a_elems": "//div/a"}
+xpath["get_photo_urls_from_profile"] = {"photos_a_elems": "//a[starts-with(@href,'/p')]/@href"}
 
 xpath["get_links_for_location"] = {
     "top_elements": "//main/article/div[1]",
@@ -191,7 +191,7 @@ xpath["open_comment_section"] = {
 }
 
 xpath["unfollow"] = {
-    "following_link": "//ul/li[3]/a/span",
+    "following_link": "//ul/li[3]/a/div/span",
     "find_dialog_box": "//section/main/div[2]",
 }
 
